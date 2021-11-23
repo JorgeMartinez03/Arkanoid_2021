@@ -53,11 +53,14 @@ public class Bola extends GOval{
 			dy = dy * -1;
 			noHaChocado = false;
 		}else if(auxiliar == null){
-
-		}else{
+		}else if (auxiliar instanceof Ladrillo){
+			if(auxiliar.getY() + getHeight() == posy || auxiliar.getY() == posy ){
+				dy = dy * -1;
+			}
+			else if(auxiliar.getY() + getWidth() == posx || auxiliar.getX() == posx ){
+				dx = dx * -1;
+			}
 			ark.remove(auxiliar);
-			dy = dy * -1;
-			dx = dx * -1;
 			noHaChocado = false;
 		}
 
